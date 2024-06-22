@@ -68,7 +68,6 @@ export const authController = new Elysia({
         }), // Enum to validate action type
       }),
       error({ code, error, set, log }) {
-
         log.error(error);
 
         let errorMessage = "";

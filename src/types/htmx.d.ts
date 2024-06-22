@@ -23,10 +23,10 @@ type RouterPattern<T extends string> =
   T extends `${infer Start}:${infer Param}/${infer Rest}`
     ? `${Start}${string}/${RouterPattern<Rest>}`
     : T extends `${infer Start}:${infer Param}`
-    ? `${Start}${string}`
-    : T extends `${infer Start}*`
-    ? `${Start}${string}`
-    : T;
+      ? `${Start}${string}`
+      : T extends `${infer Start}*`
+        ? `${Start}${string}`
+        : T;
 
 type StartsWithApi<T extends string> = T extends `${"/api"}${infer Rest}`
   ? T
